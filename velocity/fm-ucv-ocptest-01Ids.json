@@ -1,0 +1,22 @@
+{
+  "pipelineId": "c8fe2b15-075e-4824-ae35-b6024b148c38",
+  "tenantId": "5ade13625558f2c6688d15ce",
+  "environments": [
+    {
+      "name": "Input",
+      "id": "7b04b396-36ac-4c04-937c-91cfb076e055"
+    },
+    {
+      "name": "DEV",
+      "id": "3dcff542-e3c0-43f6-897d-ebf3bc3858e5"
+    },
+    {
+      "name": "QA",
+      "id": "72b8000f-ab33-466b-bdba-d83525e9d83f"
+    },
+    {
+      "name": "PROD",
+      "id": "ddde7cc9-a420-4971-863e-aa2da412b713"
+    }
+  ]
+}
