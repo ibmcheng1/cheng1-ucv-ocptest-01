@@ -1,0 +1,125 @@
+{
+  "_id": "5f8069e967aa5a215a9d798f",
+  "pipelineId": "c8fe2b15-075e-4824-ae35-b6024b148c38",
+  "tenantId": "5ade13625558f2c6688d15ce",
+  "description": null,
+  "query": "",
+  "phases": [
+    {
+      "name": "PLAN",
+      "description": "",
+      "stages": [
+        {
+          "name": "Backlog",
+          "query": "issue.status=\"Team Backlog\"",
+          "description": "",
+          "wipLimit": null,
+          "gates": null
+        }
+      ]
+    },
+    {
+      "name": "DEVELOP",
+      "description": "",
+      "stages": [
+        {
+          "name": "In progress",
+          "query": "issue.status='WIP - Dev' or issue.status='WIP 1' or issue.status='WIP 2'",
+          "description": "",
+          "wipLimit": null,
+          "gates": null
+        },		
+{
+		  "name": "Review",
+		  "query": "(issue.status='Review' and pr.status=open) or pr.status=open or (issue.status='Review' and pr.status!=MERGED)",
+		  "description": "Opened Pull Requests",
+		  "wipLimit": null,
+		  "gates": null
+		},
+		{
+		  "name": "Merged",
+		  "query": "(issue.status='Review' and pr.status=MERGED AND build.status!=success) OR ((pr.status=MERGED or pr.status=closed) AND build.status!=success)",
+		  "description": "Everything approved and merged into master",
+		  "wipLimit": null,
+		  "gates": null
+		},
+		{
+		  "name": "Build",
+		  "query": "build.status=success AND deployment.env!=DEV",
+		  "description": "Building in Jenkins",
+		  "wipLimit": null,
+		  "gates": null
+		}
+      ]
+    },
+    {
+      "name": "DEPLOY",
+      "description": "",
+      "stages": [
+		{
+          "name": "DEV",
+          "query": "deployment.env=DEV AND deployment.env!=QA",
+          "description": "",
+          "wipLimit": null,
+          "gates": null
+        },
+		{
+          "name": "QA",
+          "query": "deployment.env=QA AND deployment.env!=PROD",
+          "description": "",
+          "wipLimit": null,
+          "gates": null
+        },		
+        {
+          "name": "PROD",
+          "query": "deployment.env=PROD",
+          "description": "",
+          "wipLimit": null,
+          "gates": null
+        }
+      ]
+    }
+  ],
+  "leadTime": {
+    "start": "Backlog",
+    "end": "PROD"
+  },
+  "cycleTime": {
+    "start": "In progress",
+    "end": "PROD"
+  },
+  "mappings": {
+    "priority": {
+      "Lowest": [
+        "Lowest"
+      ],
+      "Low": [
+        "Low"
+      ],
+      "Medium": [
+        "Medium"
+      ],
+      "High": [
+        "High"
+      ],
+      "Highest": [
+        "Highest"
+      ],
+	  "Critical": [
+        "Critical"
+      ],
+	  "Blocker": [
+        "Blocker"
+      ]
+    }
+  },
+  "integrations": [
+	{
+	  "name":"github-ibmcheng1-cheng1-ucv-ocptest-01"
+    }
+  ],
+  "linkRules": [
+  ],
+  "metrics": null,
+  "metricsBar": null
+}

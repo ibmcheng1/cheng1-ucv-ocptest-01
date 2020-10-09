@@ -1,0 +1,87 @@
+
+Your new access key has been created. It will not be shown again.
+Access Key: 992a8580-012e-46cd-a39e-7dd53712c866
+Created: October 4, 2020 2:44 PM-05:00
+Name: admin-access-key
+
+
+##############################
+UCD Integration:
+###############################
+Name: UrbanCode Deploy
+UCD server URL: https://velocity.com:8443
+UrbanCode Deploy access token: e79587fe-1ba9-4ac4-95c1-ad7d5e543761
+
+// after upgrade UCV
+// UCD integration need to use the following url for UCD
+curl -k https://172.17.0.1:8443
+curl -k https://172.19.0.1:8443
+
+
+##############################
+Jenkins Integration:
+###############################
+Integration ID:     
+Integration token:  
+
+##############################
+Jenkins2 Integration:
+###############################
+Integration ID:     
+Integration token:  
+
+
+##############################
+Velocity Github Integration:
+###############################
+Integration name:  github-ibmcheng1-cheng1-ucv-ocptest-01
+UrbanCode Velocity User Access Key (ccocp401 velocity 2.1.0): 8a2b5741-0cc0-4471-b1ef-41784d5d8ec7
+Repositories:      cheng1-ucv-ocptest-01         
+Owner:         ibmcheng1
+Api Url:       https://api.github.com
+Token:         b2d655ff38adbab3faea1e93be6f1d8909988177
+
+
+#################################
+https://github.com/ibmcheng1/cheng1-ucv-test-01
+---
+// https://github.com/settings/tokens
+ibmcheng1-personal-access-token:  b2d655ff38adbab3faea1e93be6f1d8909988177
+
+---
+// testing url
+https://api.github.com/repos/ibmcheng1/cheng1-ucv-test-01
+---
+Velocity plugin error:
+----------------------
+
+[2020-10-04T20:00:14.094] [ERROR] VelocityPluginRunner - Error running the plugin { HttpError: request to https://api.github.com/repos/ibmcheng1/cheng1-ucv-test-01/pulls?per_page=20&sort=updated&direction=desc&state=all failed, reason: getaddrinfo ENOTFOUND api.github.com api.github.com:443
+
+    at fetch.then.then.catch.error (/opt/dist/node_modules/@octokit/rest/lib/request/request.js:105:13)
+
+    at <anonymous>
+
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+
+  name: 'HttpError',
+
+  code: 500,
+
+  status: 'Internal Server Error',
+
+  headers: {} }
+
+
+
+#################################
+
+IBM Cloud - Velocity demo syste,
+---------------------
+Access key created
+
+    Your new access key has been created. It will not be shown again.
+    Access Key: 16c234c9-1e73-461b-b290-e00a6fc3c527
+
+Created: October 4, 2020 11:02 PM+00:00
+Name: admin-access-key 
+--------------------
