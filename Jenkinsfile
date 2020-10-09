@@ -2,7 +2,7 @@ node {
     def VELOCITY_TENANT_ID="5ade13625558f2c6688d15ce"
     
     //VELOCITY_APP_NAME must match your Velocity pipeline application name
-    def VELOCITY_APP_NAME="cheng1-ucv-ocptest-01"
+    def VELOCITY_APP_NAME="cheng1-ucv-ocptest-02"
     
     //Do not change below this line.
     def GIT_COMMIT
